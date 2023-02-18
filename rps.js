@@ -1,9 +1,28 @@
-//let input=prompt("Enter R P S");
+let input;
 const rps = ["rock", "paper", "scissor"];
+let winner;
 
 function getComputerChoice() {
   let rando = Math.floor(Math.random() * rps.length);
-  return (rps[rando]);
-}
+  return rps[rando];
+} // Returns Computer's Choice
 
-console.log(getComputerChoice());
+function playRound(playerchoice, compchoice) {
+  if (playerchoice.toLowerCase() == compchoice.toLowerCase()) {
+    return "tie";
+  } else if (playerchoice == "paper" && compchoice == "rock") {
+    return "player";
+  } else if (playerchoice == "rock" && compchoice == "paper") {
+    return "pc";
+  } else if (playerchoice == "scissor" && compchoice == "paper") {
+    return "player";
+  } else if (playerchoice == "paper" && compchoice == "scissor") {
+    return "pc";
+  } else if (playerchoice == "rock" && compchoice == "scissor") {
+    return "player";
+  } else if (playerchoice == "scissor" && compchoice == "rock") {
+    return "pc";
+  }
+} // Returns the Winner of a round
+
+
