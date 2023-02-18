@@ -25,17 +25,22 @@ function playRound(playerchoice, compchoice) {
   }
 } // Returns the Winner of a round
 
-function game()
-{
-    for(let i=1;i<=5;i++)
-    {
-       input = prompt("Enter R P S");
-       const compchoice = getComputerChoice();
-       console.log("User choice is: " + input);
-       console.log("PC choice is: " + compchoice);
-       winner = playRound(input, compchoice);
-       console.log("Winner is: " + winner);
-    }
-}
+let uw = 0;
+let pcw = 0;
 
-game();
+function game() {
+  while (uw < 3 && pcw < 3) {
+    input = prompt("Enter R P S");
+    const compchoice = getComputerChoice();
+    console.log("User choice is: " + input);
+    console.log("PC choice is: " + compchoice);
+    winner = playRound(input, compchoice);
+    console.log("Winner is: " + winner);
+    if (winner == "player") {
+      ++uw;
+    } else if (winner == "pc") {
+      ++pcw;
+    }
+    console.log("User wins: " + uw + " PC wins: " + pcw);
+  }
+}
