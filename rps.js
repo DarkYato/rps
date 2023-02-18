@@ -43,4 +43,6 @@ function game() {
     }
     console.log("User wins: " + uw + " PC wins: " + pcw);
   }
-}
+} // Executes the game, first one to hit 3 wins is the winner
+
+game ();
